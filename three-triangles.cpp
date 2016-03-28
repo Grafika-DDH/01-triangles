@@ -45,14 +45,27 @@ int main(void)
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
         // glRotatef((float) glfwGetTime() * 50.f, 0.f, 0.f, 1.f);
-        glBegin(GL_TRIANGLES);
+        glBegin(GL_TRIANGLES); // segitiga kiri bawah
         glColor3f(1.f, 0.f, 0.f);
-        glVertex3f(-0.6f, -0.4f, 0.f);
+        glVertex3f(-0.8f, -0.6f, 0.f);
+        glVertex3f(0.f, -0.6f, 0.f);
+        glVertex3f(-0.4f, 0.f, 0.f);
+        glEnd();
+
+        glBegin(GL_TRIANGLES); // segitiga kanan bawah
         glColor3f(0.f, 1.f, 0.f);
-        glVertex3f(0.6f, -0.4f, 0.f);
+        glVertex3f(0.f, -0.6f, 0.f);
+        glVertex3f(0.8f, -0.6f, 0.f);
+        glVertex3f(0.4f, 0.f, 0.f);
+        glEnd();
+
+        glBegin(GL_TRIANGLES); // segitiga atas
         glColor3f(0.f, 0.f, 1.f);
+        glVertex3f(-0.4f, 0.f, 0.f);
+        glVertex3f(0.4f, 0.f, 0.f);
         glVertex3f(0.f, 0.6f, 0.f);
         glEnd();
+
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
